@@ -1,0 +1,90 @@
+1916,Intolerance
+1925,The Big Parade
+1927,Metropolis
+1929,Die Büchse der Pandora
+1930,Hell's Angels
+1932,A Farewell to Arms
+1933,42nd Street
+1934,It Happened One Night
+1935,Top Hat
+1936,Modern Times
+1937,The Prisoner of Zenda
+1938,Alexander's Ragtime Band
+1939,Gone with the Wind
+1940,Pinocchio
+1941,How Green Was My Valley
+1942,Casablanca
+1944,A Guy Named Joe
+1945,State Fair
+1946,Duel in the Sun
+1947,Tycoon
+1948,The Pirate
+1949,She Wore a Yellow Ribbon
+1950,Annie Get Your Gun
+1951,Quo Vadis
+1952,The Greatest Show on Earth
+1953,The Robe
+1954,20000 Leagues Under the Sea
+1955,The Trouble with Harry
+1956,Moby Dick
+1957,The Bridge on the River Kwai
+1958,Cat on a Hot Tin Roof
+1959,Solomon and Sheba
+1960,Psycho
+1961,West Side Story
+1962,Lolita
+1963,Cleopatra
+1964,The Fall of the Roman Empire
+1965,The Greatest Story Ever Told
+1966,A Man for All Seasons
+1967,You Only Live Twice
+1968,Yours Mine and Ours
+1969,Paint Your Wagon
+1970,Tora! Tora! Tora!
+1971,The French Connection
+1972,Солярис
+1973,Mean Streets
+1974,The Godfather: Part II
+1975,Jaws
+1976,The Bad News Bears
+1977,A Bridge Too Far
+1978,Superman
+1979,All That Jazz
+1980,Superman II
+1981,Inchon
+1982,Conan the Barbarian
+1983,Superman III
+1984,Red Dawn
+1985,Rambo: First Blood Part II
+1986,Legal Eagles
+1987,The Living Daylights
+1988,Rambo III
+1989,The Abyss
+1990,Total Recall
+1991,Terminator 2: Judgment Day
+1992,Batman Returns
+1993,Last Action Hero
+1994,True Lies
+1995,Waterworld
+1996,Eraser
+1997,Titanic
+1998,Armageddon
+1999,Wild Wild West
+2000,Dinosaur
+2001,The Fast and the Furious
+2002,Die Another Day
+2003,Terminator 3: Rise of the Machines
+2004,Spider-Man 2
+2005,King Kong
+2006,Superman Returns
+2007,Pirates of the Caribbean: At World's End
+2008,Quantum of Solace
+2009,Avatar
+2010,Tangled
+2011,Pirates of the Caribbean: On Stranger Tides
+2012,The Dark Knight Rises
+2013,The Lone Ranger
+2014,The Hobbit: The Battle of the Five Armies
+2015,Spectre
+2016,Batman v Superman: Dawn of Justice
+2017,Growing Up Smith
