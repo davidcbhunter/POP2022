@@ -229,7 +229,7 @@ Knight and Day,261930431
 Oblivion,286168572
 Star Wars: Episode III - Revenge of the Sith,850000000
 Star Wars: Episode II - Attack of the Clones,649398328
-Monsters, Inc.,562816256
+Monsters Inc.,562816256
 The Wolverine,415440673
 Star Wars: Episode I - The Phantom Menace,924317558
 The Croods,585178928
@@ -264,7 +264,7 @@ The Lord of the Rings: The Fellowship of the Ring,871368364
 Around the World in 80 Days,72178895
 Ali,87713825
 The Cat in the Hat,0
-I, Robot,347234916
+I Robot,347234916
 Kingdom of Heaven,211643158
 Stuart Little,300135367
 The Princess and the Frog,267045765
@@ -664,7 +664,7 @@ Fight Club,100853753
 We Are Marshall,43545364
 Hudson Hawk,17218080
 Lucky Numbers,0
-I, Frankenstein,71154592
+I Frankenstein,71154592
 Oliver Twist,42093706
 Elektra,56681566
 Sin City: A Dame to Kill For,39407616
@@ -867,7 +867,7 @@ Seven Pounds,168167691
 Bullet to the Head,9489829
 The Godfather: Part III,136766062
 Elizabethtown,52034889
-You, Me and Dupree,130431368
+You Me and Dupree,130431368
 Superman II,190458706
 Gigli,7266209
 All the King's Men,9450897
@@ -893,7 +893,7 @@ Man on the Moon,47434430
 Casino,116112375
 From Paris with Love,52826594
 Bulletproof Monk,0
-Me, Myself & Irene,149270999
+Me Myself & Irene,149270999
 Barnyard,72779000
 Deck the Halls,47231070
 The Twilight Saga: New Moon,709827462
@@ -923,7 +923,7 @@ We Bought a Zoo,120081841
 Knowing,155446362
 Failure to Launch,88715192
 The Ring Two,161451538
-Crazy, Stupid, Love.,142851197
+Crazy Stupid Love.,142851197
 Garfield,200804534
 Christmas with the Kranks,0
 Moneyball,110206216
@@ -1064,7 +1064,7 @@ A Bug's Life,363258859
 From Hell,74558115
 The Specialist,170362582
 Tin Cup,53854588
-Yours, Mine and Ours,0
+Yours Mine and Ours,0
 Kicking & Screaming,56070433
 The Hitchhiker's Guide to the Galaxy,104478416
 Fat Albert,0
@@ -1177,7 +1177,7 @@ The Last of the Mohicans,75505856
 Ray,124731534
 Sin City,158733820
 Vantage Point,151161491
-I Love You, Man,91636986
+I Love You Man,91636986
 Shallow Hal,141069860
 JFK,205405498
 Big Momma's House 2,138259062
@@ -1503,7 +1503,7 @@ Stigmata,50041732
 Men of Honor,48814909
 Takers,69055695
 The Big Wedding,21819348
-Big Mommas: Like Father, Like Son,83615414
+Big Mommas: Like Father Like Son,83615414
 Source Code,147332697
 Alive,36733909
 The Number 23,77566815
@@ -1721,7 +1721,7 @@ No Reservations,92601050
 Kick-Ass,96188903
 30 Minutes or Less,40547440
 Dracula 2000,33000337
-Alexander and the Terrible, Horrible, No Good, Very Bad Day,100654149
+Alexander and the Terrible Horrible No Good Very Bad Day,100654149
 Pride & Prejudice,121147947
 Blade Runner,33139618
 Rob Roy,31596911
@@ -1730,7 +1730,7 @@ We Own the Night,54926886
 Lost Souls,0
 Le peuple migrateur,20217080
 Just My Luck,38159905
-Mystery, Alaska,8888143
+Mystery Alaska,8888143
 The Spy Next Door,45236543
 A Simple Wish,8345056
 Ghosts of Mars,14010832
@@ -1788,7 +1788,7 @@ Flatliners,61489265
 A Bridge Too Far,50750000
 Red Eye,57891803
 Final Destination 2,90426405
-O Brother, Where Art Thou?,71868327
+O Brother Where Art Thou?,71868327
 Legion,67918658
 Pain & Gain,86175291
 In Good Company,0
@@ -1831,7 +1831,7 @@ No Country for Old Men,171600000
 Ride Along,153997819
 Bridget Jones's Diary,281929795
 Chocolat,152500343
-Legally Blonde 2: Red, White & Blonde,124914842
+Legally Blonde 2: Red White & Blonde,124914842
 Parental Guidance,119772232
 No Strings Attached,147780440
 Tombstone,56505065
@@ -1897,7 +1897,7 @@ Punch-Drunk Love,17000000
 EuroTrip,20796847
 Half Past Dead,0
 Unaccompanied Minors,0
-Bright Lights, Big City,0
+Bright Lights Big City,0
 The Adventures of Pinocchio,0
 The Greatest Game Ever Played,15431177
 The Box,33333531
@@ -1972,7 +1972,7 @@ Zack and Miri Make a Porno,42105111
 Nurse Betty,0
 The Men Who Stare at Goats,68729358
 Double Take,0
-Girl, Interrupted,0
+Girl Interrupted,0
 Win a Date with Tad Hamilton!,16980098
 Muppets from Space,16290976
 The Wiz,21049053
@@ -2039,7 +2039,7 @@ Diary of a Wimpy Kid: Dog Days,77112176
 Summer of Sam,0
 Jay and Silent Bob Strike Back,33788161
 The Glass House,23619609
-Hail, Caesar!,63647656
+Hail Caesar!,63647656
 Josie and the Pussycats,0
 Homefront,43058898
 The Little Vampire,13555988
@@ -2065,7 +2065,7 @@ Arlington Road,0
 Metegol,24000000
 To Rome with Love,73244881
 Firefox,70687344
-South Park: Bigger, Longer & Uncut,0
+South Park: Bigger Longer & Uncut,0
 Death at a Funeral,46
 Teenage Mutant Ninja Turtles III,42000000
 Hardball,40222729
@@ -2244,7 +2244,7 @@ Flash of Genius,0
 I'm Not There.,4001121
 The Cold Light of Day,16863583
 The Brothers Bloom,5530764
-Synecdoche, New York,0
+Synecdoche New York,0
 もののけ姫,159375308
 Bon voyage,0
 Can't Stop the Music,0
@@ -2353,7 +2353,7 @@ Love the Coopers,24000000
 Catch That Kid,16702864
 Life as a House,0
 Steve Jobs,34441873
-I Love You, Beth Cooper,0
+I Love You Beth Cooper,0
 Youth in Revolt,0
 The Legend of the Lone Ranger,2945600
 The Tailor of Panama,28008462
@@ -2417,7 +2417,7 @@ A Night at the Roxbury,30331165
 Beastly,43165571
 The Hills Have Eyes,69623713
 Dickie Roberts: Former Child Star,0
-McFarland, USA,45710059
+McFarland USA,45710059
 Lottery Ticket,0
 ATL,21170563
 Pitch Perfect,115350426
@@ -2691,7 +2691,7 @@ Our Family Wedding,21409028
 Dead Man on Campus,0
 Tea with Mussolini,21001563
 Thinner,0
-New York, New York,0
+New York New York,0
 Crooklyn,0
 I Think I Love My Wife,13196245
 Jason X,16951798
@@ -2725,7 +2725,7 @@ The Caveman's Valentine,0
 Der Untergang,92180910
 Mar adentro,38535221
 Under the Skin,5380251
-Good Morning, Vietnam,123922370
+Good Morning Vietnam,123922370
 The Last Godfather,16700000
 Justin Bieber: Never Say Never,98441954
 Black Swan,327803731
@@ -2733,7 +2733,7 @@ The Godfather: Part II,47542841
 Save the Last Dance,91038276
 A Nightmare on Elm Street 4: The Dream Master,72500000
 Miracles from Heaven,77000000
-Dude, Where’s My Car?,73180723
+Dude Where’s My Car?,73180723
 Young Guns,44726644
 St. Vincent,54837234
 About Last Night,49002684
@@ -2767,7 +2767,7 @@ Light It Up,0
 Bubble Boy,0
 Birthday Girl,0
 21 & Over,48065672
-Paris, je t'aime,4857367
+Paris je t'aime,4857367
 Resurrecting the Champ,0
 Admission,18000000
 La veuve de Saint-Pierre,0
@@ -3035,7 +3035,7 @@ The Corruptor,15156200
 Mud,21587700
 Reno 911!: Miami,20342161
 One Direction: This Is Us,0
-The Goods: Live Hard, Sell Hard,0
+The Goods: Live Hard Sell Hard,0
 Hey Arnold! The Movie,0
 My Week with Marilyn,35057696
 The Matador,17297244
@@ -3068,7 +3068,7 @@ Black or White,21571189
 On the Line,0
 Rescue Dawn,7177143
 Danny Collins,10835752
-Jeff, Who Lives at Home,4417580
+Jeff Who Lives at Home,4417580
 Io sono l'amore,0
 Atlas Shrugged Part II,0
 Romeo Is Bleeding,3275585
@@ -3096,7 +3096,7 @@ The Brothers Solomon,0
 My Blueberry Nights,21786738
 Illuminata,0
 Swept Away,598645
-War, Inc.,1296184
+War Inc.,1296184
 少林足球,42776760
 The Brown Bunny,0
 Rien ne va plus,0
@@ -3113,7 +3113,7 @@ Police Academy: Mission to Moscow,126247
 Blood Done Sign My Name,0
 Cinco de Mayo: La Batalla,0
 Elsa & Fred,0
-An Alan Smithee Film: Burn, Hollywood, Burn,45779
+An Alan Smithee Film: Burn Hollywood Burn,45779
 The Open Road,0
 The Good Guy,0
 Motherhood,0
@@ -3134,7 +3134,7 @@ Hai Marjawaan!,0
 The Devil's Tomb,0
 Partition,0
 Good Intentions,0
-좋은 놈, 나쁜 놈, 이상한 놈,0
+좋은 놈 나쁜 놈 이상한 놈,0
 Nurse 3-D,10000000
 Gunless,0
 Adventureland,17164377
@@ -3146,7 +3146,7 @@ Plastic,0
 Amour,19839492
 Poltergeist III,14144000
 Re-Kill,0
-It's a Mad, Mad, Mad, Mad World,60000000
+It's a Mad Mad Mad Mad World,60000000
 Volver,85582407
 Heavy Metal,0
 Gentlemen Broncos,0
@@ -3343,9 +3343,9 @@ Magic Mike,167221571
 Darkness Falls,0
 Live and Let Die,161777836
 My Dog Skip,0
-Definitely, Maybe,55447968
+Definitely Maybe,55447968
 Jumping the Broom,37710610
-Good Night, and Good Luck.,54600000
+Good Night and Good Luck.,54600000
 Capote,49084830
 Desperado,25405445
 Logan's Run,25000000
@@ -3438,7 +3438,7 @@ The Messenger,1521261
 Tracker,0
 Control,8159508
 The Terminator,78371200
-Good bye, Lenin!,79384880
+Good bye Lenin!,79384880
 The Damned United,0
 The Return of the Living Dead,14237000
 Mallrats,2122561
@@ -3500,7 +3500,7 @@ Snow Flower and the Secret Fan,1332231
 Come Early Morning,0
 Lucky Break,0
 Julia,0
-Surfer, Dude,69497
+SurferDude,69497
 Lake of Fire,25
 11:14,0
 Men of War,0
@@ -3584,7 +3584,7 @@ Mommie Dearest,0
 Our Idiot Brother,17273593
 Race,24804129
 The Players Club,0
-As Above, So Below,40100000
+As AboveSo Below,40100000
 Addicted,0
 Eve's Bayou,0
 Still Alice,43884652
@@ -3643,11 +3643,11 @@ The Oh in Ohio,0
 Atlas Shrugged Part III: Who is John Galt?,846704
 Bottle Rocket,560069
 Albino Alligator,0
-Gandhi, My Father,0
+GandhiMy Father,0
 Standard Operating Procedure,0
 Out of the Blue,0
 Tucker and Dale vs Evil,5476793
-Lovely, Still,0
+LovelyStill,0
 Tycoon,0
 Desert Blue,0
 Decoys,0
@@ -3700,7 +3700,7 @@ Moby Dick,10400000
 Bound,7011317
 Requiem for a Dream,7390108
 State Fair,0
-Tango, no me dejes nunca,0
+Tango no me dejes nunca,0
 Salvador,0
 Moms' Night Out,10429707
 Donnie Darko,1270522
@@ -3709,7 +3709,7 @@ Karakter,0
 Spun,0
 Life During Wartime,744816
 친절한 금자씨,23803308
-Nannerl, la soeur de Mozart,0
+Nannerl la soeur de Mozart,0
 Mean Machine,0
 放‧逐,0
 Blackthorn,623528
@@ -3785,7 +3785,7 @@ Shooting Fish,302204
 Prison,354704
 Psycho Beach Party,0
 The Big Tease,0
-Guten Tag, Ramón,0
+Guten Tag Ramón,0
 Trust,120000
 An Everlasting Piece,0
 Among Giants,0
@@ -3851,7 +3851,7 @@ The Betrayed,0
 Taxman,0
 The Secret,0
 2:13,0
-Batman: The Dark Knight Returns, Part 2,0
+Batman: The Dark Knight Returns Part 2,0
 Time to Choose,0
 In the Name of the King III,0
 Wicked Blood,0
@@ -3877,7 +3877,7 @@ Entre les murs,28814580
 Rosemary's Baby,33395426
 The Man Who Shot Liberty Valance,8000000
 Adam,2277396
-María, llena eres de gracia,0
+María llena eres de gracia,0
 Beginners,5332926
 Feast,658573
 Animal House,141000000
@@ -4004,7 +4004,7 @@ Los cronocrímenes,553198
 疯狂的赛车,0
 Timber Falls,0
 Singin' in the Rain,7200000
-Fat, Sick & Nearly Dead,0
+Fat Sick & Nearly Dead,0
 A Haunted House,60141683
 2016: Obama's America,33400000
 That Thing You Do!,34585416
@@ -4042,7 +4042,7 @@ This Is England,8176544
 U.F.O.,0
 Bathing Beauty,6892000
 Go for It!,0
-Dancer, Texas Pop. 81,565592
+Dancer Texas Pop. 81,565592
 Show Boat,11000000
 Redemption Road,0
 The Calling,0
@@ -4102,7 +4102,7 @@ Full Frontal,2506446
 Witchboard,0
 Shortbus,5179037
 Vals Im Bashir,11125849
-The Book of Mormon Movie, Volume 1: The Journey,1672730
+The Book of Mormon Movie Volume 1: The Journey,1672730
 No End in Sight,1431623
 The Diary of a Teenage Girl,1477002
 In the Shadow of the Moon,0
@@ -4137,7 +4137,7 @@ Freeze Frame,0
 Grave Encounters,0
 Stitches,95000
 Nine Dead,0
-To Be Frank, Sinatra at 100,0
+To Be Frank Sinatra at 100,0
 Bananas,11833696
 $upercapitalist,0
 Rockaway,0
@@ -4193,7 +4193,7 @@ La misma luna,23311391
 Conquest of the Planet of the Apes,9700000
 In the Bedroom,0
 I Spit on Your Grave,572809
-Happy, Texas,1943649
+Happy Texas,1943649
 My Summer of Love,0
 Dabba,4235151
 Yes,0
@@ -4298,11 +4298,11 @@ But I'm a Cheerleader,0
 Home Run,2861020
 Reservoir Dogs,14661007
 The Blue Bird,0
-Il buono, il brutto, il cattivo,6000000
+Il buono il brutto il cattivo,6000000
 Que Horas Ela Volta?,0
 Blue Like Jazz,0
 Down & Out With The Dolls,0
-Pink Ribbons, Inc.,25000
+Pink Ribbons Inc.,25000
 Certifiably Jonathan,0
 Q,0
 La Navaja De Don Juan,0
@@ -4352,7 +4352,7 @@ Shine a Light,0
 The Green Inferno,6833445
 Departure,0
 The Sessions,9138338
-Food, Inc.,0
+Food Inc.,0
 October Baby,5355847
 Next Stop Wonderland,0
 The Skeleton Twins,5284309
@@ -4430,7 +4430,7 @@ And Then Came Love,0
 Food Chains,0
 On the Waterfront,9600000
 L!fe Happens,30905
-4 luni, 3 săptămîni și 2 zile,1185783
+4 luni 3 săptămîni și 2 zile,1185783
 The Horror Network Vol. 1,0
 Hard Candy,7022209
 The Quiet,381420
@@ -4442,7 +4442,7 @@ The Hammer,0
 Latter Days,819939
 Le bonheur d'Elza,0
 1982,0
-For a Good Time, Call...,1243961
+For a Good Time Call...,1243961
 Celeste & Jesse Forever,3094813
 Time Changer,0
 London to Brighton,0
@@ -4615,7 +4615,7 @@ Pierrot le fou,0
 Sisters in Law,0
 Ayurveda: Art of Being,2074000
 Nothing But a Man,0
-First Love, Last Rites,40542
+First Love Last Rites,40542
 Fighting Tommy Riley,0
 Royal Kill,0
 The Looking Glass,0
@@ -4733,9 +4733,9 @@ Open Secret,0
 Echo Dr.,0
 The Night Visitor,0
 The Past Is a Grotesque Animal,0
-Peace, Propaganda & the Promised Land,0
+Peace Propaganda & the Promised Land,0
 Pi,3221152
-I Love You, Don't Touch Me!,0
+I Love You Don't Touch Me!,0
 20 Dates,0
 Queen Crab,0
 Super Size Me,28575078
@@ -4747,7 +4747,7 @@ Supporting Characters,0
 Absentia,0
 The Brothers McMullen,0
 The Dirties,0
-Gabriela, Cravo e Canela,0
+Gabriela Cravo e Canela,0
 Tiny Furniture,416498
 Hayride,0
 The Naked Ape,0
@@ -4763,7 +4763,7 @@ Smiling Fish & Goat On Fire,0
 Dawn of the Crescent Moon,0
 Raymond Did It,0
 The Last Waltz,321952
-Run, Hide, Die,0
+Run Hide Die,0
 The Exploding Girl,0
 The Legend of God's Gun,0
 Mutual Appreciation,0
@@ -4796,6 +4796,6 @@ Primer,424760
 Cavite,0
 El Mariachi,2040920
 Newlyweds,0
-Signed, Sealed, Delivered,0
+Signed Sealed Delivered,0
 Shanghai Calling,0
 My Date with Drew,0
