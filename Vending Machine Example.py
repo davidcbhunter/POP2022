@@ -54,23 +54,23 @@ def Buy(cp, cm):
     global amount4
     global amount5
     global money
-    if cp == product1 and cm >= price1:
+    if cp == product1:
         amount1 -= 1
         money += price1
         ShowMessage(cp,cm,price1)
-    if cp == product2 and cm >= price2:
+    if cp == product2:
         amount2 -= 1
         money += price2
         ShowMessage(cp,cm,price2)
-    if cp == product3 and cm >= price3:
+    if cp == product3:
         amount3 -= 1
         money += price3
         ShowMessage(cp,cm,price3)
-    if cp == product4 and cm >= price4:
+    if cp == product4:
         amount4 -= 1
         money += price4
         ShowMessage(cp,cm,price4)
-    if cp == product5 and cm >= price5:
+    if cp == product5:
         amount5 -= 1
         money += price5
         ShowMessage(cp,cm,price5)
