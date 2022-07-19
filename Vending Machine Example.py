@@ -1,8 +1,12 @@
-product1 = "Black Coffee"
-product2 = "Milk Coffee"
-product3 = "Apple Juice"
-product4 = "Cola"
-product5 = "Energy Drink"
+#we will delete these later
+product1 = ""
+product2 = ""
+product3 = ""
+product4 = ""
+product5 = ""
+
+product_list = ["Black Coffee","Milk Coffee",\
+                "Apple Juice","Cola","Energy Drink"]
 
 price1 = 130
 price2 = 130
@@ -21,17 +25,15 @@ money = 2000
 def ShowProducts():
     #we don't need global here because we are not changing the value
     # of the products or prices
-    print(product1 + "\t" + product2 + "\t" + product3 + "\t" \
-          + product4 + "\t" + product5)
+    print(product_list[0] + "\t" + product_list[1] + "\t" + product_list[2] + "\t" \
+          + product_list[3] + "\t" + product_list[4])
     print(str(price1) + "\t\t" + str(price2) + "\t\t" + str(price3) + "\t\t" \
           + str(price4) + "\t" + str(price5))
 
 def IsProduct():
     #we don't need global here because we are not changing the value
     # of the products
-    return current_product == product1 or current_product == product2 \
-   or current_product == product3 or current_product == product4 \
-   or current_product == product5
+    return current_product in product_list
 
 def IsAmountEnough():
     return (current_product == product1 and amount1 > 0) or \
