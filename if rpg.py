@@ -59,8 +59,8 @@ def AttackEnemy():
         boss_health = boss_health - player_attack
         print(boss_health)
 
-while player_health > 0 and monster1_health > 0 \
-      and monster2_health > 0 and boss_health > 0:
+while player_health > 0 and (monster1_health > 0 \
+      or monster2_health > 0 or boss_health > 0):
     
     AttackEnemy()
 
@@ -71,6 +71,9 @@ while player_health > 0 and monster1_health > 0 \
 
     
 # check if the player is alive
+if player_health > 0:
+    print("You killed all the monsters! Good job")
+else:
+    print("You died! Try again!")
 
-# check if the enemies are alive
-
+    # check if the enemies are alive
