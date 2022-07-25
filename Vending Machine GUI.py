@@ -46,7 +46,7 @@ def Buy():
           + " left in the vending machine.")
     print("There is " + str(money) + " yen in the vending machine.")
     #update the buttons based on the amount
-    if !IsAmountEnough(current_product_index):
+    if not IsAmountEnough(current_product_index):
         btn_list[current_product_index].configure(state = tk.DISABLED)
     ShowMessage()
 
@@ -109,7 +109,7 @@ def MakeButtons():
                        str(price_list[product_list.index(p)]),\
                        command = lambda p = p:ProductSelected(p))
         #we only want to enable the button if the amount is enough
-        if !IsAmountEnough(product_list.index(p)):
+        if not IsAmountEnough(product_list.index(p)):
             btn.configure(state = tk.DISABLED)
         btn.grid(column = product_list.index(p),row = 2)
         btn_list.append(btn)
