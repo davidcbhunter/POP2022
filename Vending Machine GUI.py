@@ -9,30 +9,12 @@ amount_list = [40,50,40,30,20]
 
 money = 2000
 
-def ShowProducts():
-    #we don't need global here because we are not changing the value
-    # of the products or prices
-    product_string = ""
-    product_price_string = ""
-    for p in product_list:
-        product_string += p + "\t"
-    print(product_string)
-    for p in price_list:
-        product_price_string += str(p) + "\t\t"
-    print(product_price_string)
 
-
-
-def IsProduct():
-    #we don't need global here because we are not changing the value
-    # of the products
-    return current_product in product_list
-
-def IsAmountEnough():
-    return amount_list[product_index] > 0
+def IsAmountEnough(x):
+    return amount_list[x] > 0
 
 def IsMoneyEnough():
-    return current_money >= price_list[product_index]
+    return current_money >= price_list[current_product_index]
 
 def ShowMessage():
     global money_string_var
@@ -64,7 +46,7 @@ def Buy():
           + " left in the vending machine.")
     print("There is " + str(money) + " yen in the vending machine.")
     #update the buttons based on the amount
-    if amount_list[current_product_index] == 0:
+    if !IsAmountEnough(current_product_index):
         btn_list[current_product_index].configure(state = tk.DISABLED)
     ShowMessage()
 
@@ -79,7 +61,7 @@ def FinishedMoney(event):
     #print(money_string_var.get())
     print(current_product_index)
     current_money = int(money_string_var.get())
-    if current_money >= price_list[current_product_index]:
+    if IsMoneyEnough():
         print("OK")
         entry.grid_forget()
         Buy()
@@ -102,7 +84,6 @@ money_string_var = tk.StringVar()
 money_string_var.set("")
 entry = tk.Entry(root,textvariable = money_string_var)
 entry.bind("<KeyRelease-Return>",FinishedMoney)
-#finished_btn = tk.Button(root,text = "Finished",command = FinishedMoney)
 current_product = ""
 current_product_index = 0
 current_money = 0
@@ -118,17 +99,18 @@ def ProductSelected(p):
     
     entry.grid(row = 3, column = 4, columnspan = 2)
     
-    #finished_btn.grid(row = 3, column = 5)
 
 btn_list = []
 def MakeButtons():
     global btn_list
     for p in product_list:
-        #we only want to enable the button if the amount is enough
-        #if amount_list[product_list.index(p)] > 0:
+
         btn = tk.Button(root, text = p + "\n" +\
                        str(price_list[product_list.index(p)]),\
                        command = lambda p = p:ProductSelected(p))
+        #we only want to enable the button if the amount is enough
+        if !IsAmountEnough(product_list.index(p)):
+            btn.configure(state = tk.DISABLED)
         btn.grid(column = product_list.index(p),row = 2)
         btn_list.append(btn)
             
