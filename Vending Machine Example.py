@@ -10,10 +10,16 @@ money = 2000
 def ShowProducts():
     #we don't need global here because we are not changing the value
     # of the products or prices
-    print(product_list[0] + "\t" + product_list[1] + "\t" + product_list[2] + "\t" \
-          + product_list[3] + "\t" + product_list[4])
-    print(str(price_list[0]) + "\t\t" + str(price_list[1]) + "\t\t" + str(price_list[2]) + "\t\t" \
-          + str(price_list[3]) + "\t" + str(price_list[4]))
+    message = ""
+    for x in product_list:
+        message += x + "\t"
+        
+    print(message)
+
+    message = ""
+    for x in price_list:
+        message += str(x) + "\t"
+    print(message)
 
 def IsProduct():
     #we don't need global here because we are not changing the value
