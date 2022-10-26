@@ -19,7 +19,7 @@ students = ["Momoka Isogai","Mei Inoue","Yuri Ebihara",\
             "Caitlyn Yamasaki", "Risa Yamazaki", "Saki Yoshikawa",\
             "Kohaku Watanabe" , "Magrat Gaudlitz"]
 
-acceptableMeiIndices = [0,1,7,8,14,15,20,21,26,27]
+acceptableMeiIndices = [0,1,7,8,14,15,20,21,25,26]
 
 root = tk.Tk()
 
@@ -147,7 +147,7 @@ def CheckMei():
     global studentsCopy
     currentMeiIndex = studentsCopy.index(students[1])
     if currentMeiIndex not in acceptableMeiIndices:
-        studentsCopy.pop(currentMeiIndix)
+        studentsCopy.pop(currentMeiIndex)
         studentsCopy.insert(random.choice(acceptableMeiIndices),students[1])
 
 def MoveOne():
