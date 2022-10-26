@@ -19,7 +19,7 @@ students = ["Momoka Isogai","Mei Inoue","Yuri Ebihara",\
             "Caitlyn Yamasaki", "Risa Yamazaki", "Saki Yoshikawa",\
             "Kohaku Watanabe" , "Magrat Gaudlitz"]
 
-
+acceptableMeiIndices = [0,1,7,8,14,15,20,21,26,27]
 
 root = tk.Tk()
 
@@ -143,6 +143,13 @@ c = 1
 r = 4
 studentsCopy = students.copy()
 
+def CheckMei():
+    global studentsCopy
+    currentMeiIndex = studentsCopy.index(students[1])
+    if currentMeiIndex not in acceptableMeiIndices:
+        studentsCopy.pop(currentMeiIndix)
+        studentsCopy.insert(random.choice(acceptableMeiIndices),students[1])
+
 def MoveOne():
     global currentStudent
     global studentsCopy
@@ -153,6 +160,7 @@ def MoveOne():
     global moveOne
     if first:
         random.shuffle(studentsCopy)
+        CheckMei()
         first = False
         for d in desks:
             d.configure(text = "")
