@@ -1,11 +1,12 @@
 import random
+import winsound
 
 students = ["Chinami Akiyama","Haruna Ishii","Misumi Ishii",\
             "Rino Ishikura","Yui Iwaki","Hiiro Umino","Arina Ohashi",\
-            "Nana Ogura","Miyu Katayanagi","Miu Katsumata","Kinari Sakamoto",\
+            "Nana Ogura","Miyu Katayanagi","Kinari Sakamoto",\
             "Hinata Sato","Sara Takeda","Sakura Tanaka","Haruna Nagata",\
             "Yuri Nakachi","Ai Hatekeyama","Moeri Minori","Sara Yanagibara",\
-            "Moeka Yamazaki","Paolina Zanner"]
+            "Moeka Yamazaki","Paolina Zanner","Elise Tazawa-Lim"]
 
 shuffle = True
 if shuffle:
@@ -16,6 +17,7 @@ current = 0
 while command != "q":
     print("\n")
     print(students[current])
+    winsound.PlaySound("trumpets.wav", winsound.SND_ASYNC)
 
     current += 1
 
@@ -24,4 +26,4 @@ while command != "q":
         random.shuffle(students)
         print("Starting Over")
     print("\n")
-    command = input("q to quit")
+    command = input("q to quit\n")

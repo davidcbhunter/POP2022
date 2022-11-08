@@ -4,7 +4,7 @@ import random
 import pickle
 import winsound
 
-rows = [["","","","",""],["","","","","",],["","","","","",],\
+rows = [["","","","",""],["","","","",""],["","","","",""],\
         ["","","","",""],["","","","",""],["","","","",""],\
         ["","","","",""]]
 
@@ -26,6 +26,7 @@ root = tk.Tk()
 fo = tk.font.Font(family = "Helvetica", size = 18)
 
 root.geometry("1000x800")
+root.title("1A Seating")
 
 bgimage = tk.PhotoImage(file = "wood floor.png")
 
@@ -182,9 +183,7 @@ def MoveOne():
     currentStudent += 1
 
     c += 1
-    if (r == 3 and c > 7) \
-           or (r == 2 and c > 6)\
-           or (r != 3 and r != 2 and c > 6):
+    if IsColumnResetCondition(r,c):
         r -=1
         c = 1
     if r < 0:
@@ -236,9 +235,7 @@ def ShowDefault():
             
         c += 1
 
-        if (r == 3 and c > 7) \
-           or (r == 2 and c > 6)\
-           or (r != 3 and r != 2 and c > 6):
+        if IsColumnResetCondition(r,c):
             r -=1
             c = 1
         if r < 0:
@@ -246,6 +243,10 @@ def ShowDefault():
             
     c = 1
     r = 4
+
+def IsColumnResetCondition(r,c):
+    return (r == 3 and c > 7) or (r == 2 and c > 6)\
+           or (r != 3 and r != 2 and c > 6)
     
 def Load():
     global desks
@@ -262,11 +263,6 @@ def Load():
             backwards.append(b)
         for c in backwards:
             if c != "":
-                #print(rows.index(r))
-                #print(backwards.index(c))
-                #print(c)
-                #index = backwards.index(c)*6+rows.index(r)
-                #print(index+1)
                 index = GetCorrectIndex(c,backwards,r)
                 desks[index].configure(text = c)
                 
@@ -279,9 +275,19 @@ def Save():
 
 ra = []
 raIndex = 0
+studentCopy = students.copy()
 random.shuffle(studentsCopy)
-for s in studentsCopy:
-    ra.append(students.index(s))
+
+def Randomize():
+    global ra
+    global studentCopy
+    global raIndex
+    ra.clear()
+    raIndex = 0
+    random.shuffle(studentsCopy)
+    for s in studentsCopy:
+        ra.append(students.index(s))
+
     
 def GetRandom():
     global desks
@@ -293,21 +299,13 @@ def GetRandom():
         d.update()
     desks[studentsCopy.index(students[raIndex])].configure(bd=5,bg="red")
     raIndex += 1
+    winsound.PlaySound("trumpets.wav", winsound.SND_ASYNC)
     if raIndex >= len(desks):
-        raIndex = 0
-        random.shuffle(studentsCopy)
-        ra.clear()
-        for s in studentsCopy:
-            ra.append(students.index(s))
+        Randomize()
+
             
 frontLabel = tk.Label(root, font = fo,text = "Front", compound = "center",wraplength = wl)
 frontLabel.grid(column = 0,row = 0, sticky = "ew", columnspan = 6,padx = 10, pady = 10)
-
-
-CreateDesks()
-
-#moveAll = tk.Button(root, font = fo,text = "Move All", command = CreateDesks)
-#moveAll.grid(column = 5,row = 5, rowspan = 5)
 
 moveOne = tk.Button(root, font = fo,text = "Move One", command = MoveOne)
 moveOne.grid(column = 5,row = 6, padx = 10, pady = 10)
@@ -323,3 +321,8 @@ save.grid(column = 5,row = 4, padx = 10, pady = 10)
 
 getRandom = tk.Button(root, font = fo,text = "Get Random", command = GetRandom)
 getRandom.grid(column = 5,row = 2,padx = 10, pady = 10)
+
+CreateDesks()
+
+
+root.mainloop()
