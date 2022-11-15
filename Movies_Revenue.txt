@@ -3201,7 +3201,7 @@ Red Riding: In the Year of Our Lord 1974,0
 La Fille du RER,0
 Veronika Decides to Die,0
 Crocodile Dundee,328203506
-Ultramarines: A Warhammer 40,000 Movie,0
+Ultramarines: A Warhammer 40000 Movie,0
 The I Inside,0
 Beneath Hill 60,0
 Polisse,20374201
@@ -3566,7 +3566,7 @@ The Robe,36000000
 The Return of the Pink Panther,41833347
 Freddy's Dead: The Final Nightmare,34872033
 Monster,60378584
-20,000 Leagues Under the Sea,28200000
+20000 Leagues Under the Sea,28200000
 Paranormal Activity: The Marked Ones,86362372
 The Elephant Man,26010864
 Dallas Buyers Club,55198285
@@ -4665,7 +4665,7 @@ Western Religion,0
 Burn,111300
 Urbania,0
 The Stewardesses,27000000
-The Beast from 20,000 Fathoms,5000000
+The Beast from 20000 Fathoms,5000000
 Mad Max,100000000
 Swingers,4505922
 Per un pugno di dollari,14500000
