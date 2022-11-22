@@ -1,3 +1,5 @@
+import datetime
+
 product_list = ["Black Coffee","Milk Coffee",\
                 "Apple Juice","Cola","Energy Drink"]
 
@@ -7,19 +9,58 @@ amount_list = [40,50,40,30,20]
 
 money = 2000
 
+class Product:
+    def __init__(self,n,p,a,h,d):
+        self.name = n
+        self.price = p
+        self.amount = a
+        self.is_hot = h
+        self.expiry_date = d
+
+
+    def IsEnoughMoney(self,p):
+        return self.price >= p
+
+    def IsInStock(self):
+        return self.amount > 0
+
+    def IsSafe(self):
+        return datetime.date.today() < self.expiry_date
+
+    def Temperature(self):
+        if self.is_hot:
+            return "Hot"
+        else:
+            return "Cold"
+
+#make the products and add them to the product list
+happy_happy_drink = Product("Happy Happy Drink",50,10,False,datetime.date(2023,11,22))
+
+black_coffee = Product("Black Coffee",40,200,True,datetime.date(2023,11,22))
+
+energy_drink = Product("Genki",140,100,False,datetime.date(2023,11,22))
+
+oolong_tea = Product("Oolong Tea",120,50,False,datetime.date(2023,11,22))
+
+cola = Product("Craft Cola",150,60,True,datetime.date(2023,11,22))
+
+products = [happy_happy_drink,black_coffee,energy_drink,oolong_tea,cola]
+
+
 def ShowProducts():
     #we don't need global here because we are not changing the value
     # of the products or prices
-    message = ""
-    for x in product_list:
-        message += x + "\t"
+    first_line_message = ""
+    second_line_message = ""
+    third_line_message = ""
+    for x in products:
+        first_line_message += x.name + "\t"
+        second_line_message += x.Temperature() + "\t"
+        third_line_message += str(x.price) + "\t"
         
-    print(message)
-
-    message = ""
-    for x in price_list:
-        message += str(x) + "\t"
-    print(message)
+    print(first_line_message)
+    print(second_line_message)
+    print(third_line_message)    
 
 def IsProduct():
     #we don't need global here because we are not changing the value
