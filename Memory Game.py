@@ -5,21 +5,22 @@ import winsound
 #make a Trump class
 class Trump:
     # we should also give each card a position,x
-    def __init__(self,btn,b_file_name,f_file_name,t_name):
+    def __init__(self,btn,b_file_name,f_file_name,t_name,pos):
         self.button = btn
         self.trump_back_file_name = b_file_name
         self.trump_front_file_name = f_file_name
         self.trump_name = t_name
         self.is_showing_face = False
+        self.position = pos
 
 
-        #self.position = x
+
         
         back_image = tk.PhotoImage(file = self.trump_back_file_name)
         # we need to set the image both ways, because
         self.button.configure(image = back_image)
         self.button.image = back_image
-        # compund lets us have both text and images together
+        # compound lets us have both text and images together
         self.button.configure(command = self.Flip, compound = "center")
 
     def Flip(self):
@@ -48,8 +49,16 @@ class Trump:
 
             #if we are showing the face, we should disable this button
             
-            # if we are showing the face, we should check firstChoice and secondChoice
+            # if we are showing the face, we should check firstChoice
+            # and secondChoice
             # another function!
+            global first_choice
+            if first_choice == -1:
+                first_choice = self.position
+            else:
+                global second_choice
+                second_choice = self.position
+                CheckChoices()
 
         
 
@@ -73,9 +82,19 @@ def LoadCards():
 
     return cards
 
+def CheckChoices():
+    global first_choice
+    global second_choice
+    if card_dictionary[first_choice].trump_name == card_dictionary[second_choice].trump_name:
+        print("Nice")
+    else:
+        card_dictionary[first_choice].Flip()
+        card_dictionary[second_choice].Flip()
+
+    first_choice = -1
+    second_choice = -1
+
 cards = LoadCards()
-#for c in cards:
-#    print(c)
 
 number_of_columns = 5
 number_of_rows = 4
@@ -98,8 +117,17 @@ random.shuffle(cards)
 
 #make function to pick the number_of_unique_cards,
 #double them, and shuffle them
+def PickRandomCards():
+    unique_card_list = []
+    for x in range(number_of_unique_cards):
+        unique_card_list.append(cards[x])
+        unique_card_list.append(cards[x])
+    random.shuffle(unique_card_list)
+    return unique_card_list
 
+ucl = PickRandomCards()
 
+card_dictionary = {}
 # put this in a function too
 for x in range(number_of_cards):
     x_pos = x_offset + (x % number_of_columns)*card_width +\
@@ -110,9 +138,11 @@ for x in range(number_of_cards):
     btn = tk.Button(root)#,image = back_image,compound = "center")
     btn.place(x = x_pos, y = y_pos)
 
-    t = Trump(btn,"playing card back.png","f.txt",cards[x])
+    t = Trump(btn,"playing card back.png","f.txt",ucl[x],x)
+    card_dictionary[x] = t
 
-# we need to save each card in a dictionary or list
+#for x in card_dictionary.keys():
+#    print(x)
 
 # we need to save the two players' scores
 
@@ -124,6 +154,8 @@ for x in range(number_of_cards):
 # remove the cards from the screen, AND
 # remove the cards from the list/dictionary
 # if they don't match, just flip firstChoice and secondChoice
+first_choice = -1
+second_choice = -1
 
 # check how many cards are left
 # if there are no cards, the game is over.
