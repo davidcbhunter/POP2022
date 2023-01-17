@@ -1,6 +1,7 @@
 import tkinter as tk
 import random
 import winsound
+import time
 
 #make a Trump class
 class Trump:
@@ -35,7 +36,7 @@ class Trump:
             self.button.configure(image = back_image)
             self.button.image = back_image
             #if we are showing the back side, we should enable this button
-
+            self.button.configure(state = tk.NORMAL)
         else:
             #we are showing the face
             # we make a small image so that we can force the button size
@@ -48,9 +49,10 @@ class Trump:
             self.button.configure(width = card_width, height = card_height)
 
             #if we are showing the face, we should disable this button
-            
-            # if we are showing the face, we should check firstChoice
-            # and secondChoice
+            self.button.configure(state = tk.DISABLED)
+            self.button.update()
+            # if we are showing the face, we should check first_choice
+            # and second_choice
             # another function!
             global first_choice
             if first_choice == -1:
@@ -72,6 +74,31 @@ root.title("Memory Game")
 
 #back_image = tk.PhotoImage(file = "playing card back.png")
 
+# make two labels for the players
+
+label_list = []
+player_scores = [0,0]
+# make a player index, use this to find the current player
+player_index = 0
+
+label = tk.Label(root,text = "Player 1: 0")
+label.place(x = 0,y = 0)
+label_list.append(label)
+
+label = tk.Label(root,text = "Player 2: 0")
+label.place(x = 924,y = 0)
+label_list.append(label)
+
+#make labels for turns
+label = tk.Label(root,text = "Player 1's turn")
+label.place(x = 0,y = 20)
+label_list.append(label)
+
+label = tk.Label(root,text = "Player 2's turn")
+label.place(x = 924,y = 20)
+label_list.append(label)
+#label_list[player_index].place_forget()
+
 def LoadCards():
     cards = []
     file = open("Trumps.txt","r")
@@ -85,14 +112,36 @@ def LoadCards():
 def CheckChoices():
     global first_choice
     global second_choice
+    global player_index
     if card_dictionary[first_choice].trump_name == card_dictionary[second_choice].trump_name:
-        print("Nice")
+        #print("Nice")
+        #remove cards if they match
+        card_dictionary[first_choice].button.destroy()
+        card_dictionary[second_choice].button.destroy()
+        #give 5 points to the player
+        player_scores[player_index] += 5
+        #update the label
+        label_list[player_index].configure(text = "Player " + str(player_index +1) \
+                                           + ": " + str(player_scores[player_index]))
+        #remove the cards from the dictionary
+        card_dictionary.pop(first_choice)
+        card_dictionary.pop(second_choice)
+        #play sound
+        winsound.PlaySound("trumpets.wav",winsound.SND_ASYNC)
     else:
+        winsound.PlaySound("error.wav",winsound.SND_ASYNC)
+        time.sleep(3)
         card_dictionary[first_choice].Flip()
         card_dictionary[second_choice].Flip()
 
     first_choice = -1
     second_choice = -1
+    player_index += 1
+    if player_index > 1:
+        player_index = 0
+
+    if len(card_dictionary) == 0:
+        winsound.PlaySound("cheers.wav",winsound.SND_ASYNC)
 
 cards = LoadCards()
 
