@@ -29,16 +29,16 @@ class Product:
         else:
             return "Cold"
 
-#make the products and add them to the product list
+#make the products and add them to the product dict
 happy_happy_drink = Product("Happy Happy Drink",50,10,False,datetime.date(2023,11,22))
 
-black_coffee = Product("Black Coffee",40,200,True,datetime.date(2023,11,22))
+black_coffee = Product("Black Coffee",40,5,True,datetime.date(2023,11,22))
 
-energy_drink = Product("Genki",140,100,False,datetime.date(2023,11,22))
+energy_drink = Product("Genki",140,4,False,datetime.date(2023,11,22))
 
-oolong_tea = Product("Oolong Tea",120,50,False,datetime.date(2023,11,22))
+oolong_tea = Product("Oolong Tea",120,3,False,datetime.date(2023,11,22))
 
-cola = Product("Craft Cola",150,60,True,datetime.date(2023,11,22))
+cola = Product("Craft Cola",150,1,True,datetime.date(2023,11,22))
 
 products = {happy_happy_drink.name:happy_happy_drink,black_coffee.name:black_coffee,\
             energy_drink.name:energy_drink,oolong_tea.name:oolong_tea,cola.name:cola}
@@ -72,9 +72,12 @@ def MoneyInMachine():
         total += coin*money_dictionary[coin]
     return total
 
-def ClearDepositedMoney():
+def ClearDepositedMoney(change_dictionary):    
     for coin in current_coins.keys():
         current_coins[coin] = 0
+    for coin in change_dictionary.keys():
+        money_dictionary[coin] = money_dictionary[coin]-change_dictionary[coin]
+    print(money_dictionary)
     PlayReturnChange()
 
 def GetChange():
@@ -86,9 +89,8 @@ def GetChange():
         if coin_number > 0:
             change_dictionary[coin] = coin_number
             change -= coin_number*coin
-    DepositMoney()
-    ClearDepositedMoney()
     #print(change_dictionary)
+    return change_dictionary
         
 #print(DepositedMoney())
 
@@ -99,15 +101,18 @@ def ShowMessage():
     if DepositedMoney() > products[current_product].price:
         message = "You have " + str(DepositedMoney()-products[current_product].price)\
                   + " yen in change.\n"
-        GetChange()
+    change_dictionary = GetChange()
+    DepositMoney()
+    ClearDepositedMoney(change_dictionary)
     message += "Enjoy your " + current_product + "."
     var.set(message)
     label = tk.Label(root, textvariable = var)
     label.grid(row = 4,column = 4, columnspan = 2)
     label.update()
     time.sleep(3)
-    for btn in btn_list.values():
-        btn.configure(state = tk.NORMAL)
+    for btn in btn_dict.keys():
+        if products[btn].IsInStock():
+            btn_dict[btn].configure(state = tk.NORMAL)
     label.grid_forget() # this makes it invisible!!
     print("There are " + str(products[current_product].amount)\
           + " " + products[current_product].name \
@@ -117,22 +122,25 @@ def Buy():
     #we need global because we are changing the amount of money and the amount
     # of the products
     global money
-    global amount_list
-    global btn_list
+    global btn_dict
     global cancelBtn
     global OKBtn
-
-    cancelBtn.grid_forget()
-    OKBtn.grid_forget()
+    if DepositedMoney() >= products[current_product].price:
+        
+        cancelBtn.grid_forget()
+        OKBtn.grid_forget()
     
-    products[current_product].amount -= 1
-    #update the buttons based on the amount
-    if not  products[current_product].IsInStock():
-        btn_list[current_product_index].configure(state = tk.DISABLED)
-    ShowMessage()
+        products[current_product].amount -= 1
+        #update the buttons based on the amount
+        if not products[current_product].IsInStock():
+            btn_dict[current_product].configure(state = tk.DISABLED)
+        ShowMessage()
+    else:
+        ShowNotEnoughMoney()
 
 root = tk.Tk()  
 root.geometry("700x600")
+root.title("Cool Cat Vending Machine")
 
 image_dictionary = {10:tk.PhotoImage(file = "10 yen coin.png"),\
                     50:tk.PhotoImage(file = "50 yen coin.png"),\
@@ -152,12 +160,14 @@ def ShowNotEnoughMoney():
 def Cancel():
     global cancelBtn
     global OKBtn
-    global btn_list
+    global btn_dict
     cancelBtn.grid_forget()
     OKBtn.grid_forget()
     ClearDepositedMoney()
-    for btn in btn_list.values():
-        btn.configure(state = tk.NORMAL)
+    for btn in btn_dict.keys():
+        if products[btn].IsInStock():
+            btn_dict[btn].configure(state = tk.NORMAL)
+            btn_dict[btn].configure(bd=0,bg="white")
     
     
 
@@ -171,51 +181,46 @@ current_product = ""
     
 def ProductSelected(p):
     global current_product
-    global btn_list
+    global btn_dict
     global cancelBtn
+    global OKBtn
     current_product = p
-    for btn in btn_list.values():
+    for btn in btn_dict.values():
         btn.configure(state = tk.DISABLED)
     print(current_product)
-    if DepositedMoney() > 0:
-        if products[current_product].IsEnoughMoney(DepositedMoney()):
-            print("OK")
-            Buy()
-        else:
-            print("Not enough")
-            #show a message
-            ShowNotEnoughMoney()
-            cancelBtn.grid(row = 3, column = 5)
-    #entry.grid(row = 3, column = 4, columnspan = 2)
+    OKBtn.grid(row = 3, column = 4)
+    cancelBtn.grid(row = 3, column = 5)
     
 
 def CoinPressed(coin):
     global current_coins
     global OKBtn
     current_coins[coin] = current_coins[coin]+1
-    #print(coin)
-    #print(current_coins[coin])
     cancelBtn.grid(row = 3, column = 5)
-    
+    #OKBtn.grid(row = 3, column = 4)
     PlayInsertSound()
     if current_product != "":
         if products[current_product].IsEnoughMoney(DepositedMoney()):
-            OKBtn.grid(row = 3, column = 6)
+            OKBtn.grid(row = 3, column = 4)
     else:
         for p in products.values():
             if p.IsEnoughMoney(DepositedMoney()):
-                btn_list[p.name].configure(state = tk.NORMAL)
+                btn_dict[p.name].configure(state = tk.NORMAL)
             else:
-                btn_list[p.name].configure(state = tk.DISABLED)
+                btn_dict[p.name].configure(state = tk.DISABLED)
     
 
-btn_list = {}
+btn_dict = {}
 coin_btns = {}
+can = tk.PhotoImage(file = "can.png")
+hot = tk.PhotoImage(file = "Hot.png")
+cold = tk.PhotoImage(file = "Cold.png")
 def MakeButtons():
-    global btn_list
+    global btn_dict
     global coin_btns
     index = 0
     for k in money_dictionary.keys():
+        
         btn = tk.Button(root, image = image_dictionary[k],\
                        command = lambda k = k:CoinPressed(k))
         coin_btns[k] = btn
@@ -223,7 +228,14 @@ def MakeButtons():
         index +=1
     index = 0
     for p in products.keys():
-
+        lb = tk.Label(root, image = can,compound = "center")
+        lb.grid(row = 0, column = index)
+        if products[p].is_hot:
+            lb = tk.Label(root, image = hot,compound = "center")
+            lb.grid(row = 1, column = index)
+        else:
+            lb = tk.Label(root, image = cold,compound = "center")
+            lb.grid(row = 1, column = index)
         btn = tk.Button(root, text = products[p].name + "\n" +\
                        str(products[p].price),\
                        command = lambda p = p:ProductSelected(p))
@@ -231,7 +243,9 @@ def MakeButtons():
         if not products[p].IsInStock():
             btn.configure(state = tk.DISABLED)
         btn.grid(column = index,row = 2)
-        btn_list[p] = btn
+        #add the button to the dictionary
+        btn_dict[p] = btn
+        #increase the index for the column
         index += 1
             
 
