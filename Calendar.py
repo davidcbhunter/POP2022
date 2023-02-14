@@ -64,7 +64,7 @@ for day in days:
     db.grid(column = days.index(day),row = 2)
 
 date_labels = []
-for da in range(35):
+for da in range(36):
     lb = tk.Label(root,text = "")
     date_labels.append(lb)
 
@@ -73,7 +73,7 @@ def ShowMonth(days_in_month,day_of_week):
         for da in date_labels:
             da.configure(text = "")
     for days in range(days_in_month[1]):
-        lb = date_labels[day_of_week+days]
+        lb = date_labels[day_of_week+days-1]
         lb.configure(text = str(days+1))
         lb.grid(column = (day_of_week+days)%7, row = 3 + (days+day_of_week)//7)
 
@@ -84,8 +84,3 @@ current_year = date.year
 days_in_month = monthrange(current_year,current_month)
 day_of_week = datetime.date(current_year,current_month,1).weekday()
 ShowMonth(days_in_month,day_of_week)
-
-
-    
-
-
