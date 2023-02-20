@@ -1,11 +1,40 @@
 import tkinter as tk
 import datetime
 import calendar
+import pickle
+import os
 
+class ToDoItem:
+    def __init__(self,description,due_date):
+        self.description = description
+        self.registered_date = datetime.date.today()
+        self.due_date = due_date
+        self.completed = False
+        self.completed_date = None
+
+    def Complete(self):
+        self.completed = True
+        self.completed_date = datetime.date.today()
+
+    def __repr__(self):
+        return self.due_date.isoformat() + " " + self.description + " " \
+               + "(" + str(self.completed) +")"
+
+file_name = "ToDoList.dat"
+todo_dictionary = {}
+
+if os.path.isfile(file_name) and os.path.getsize(file_name):
+    file = open(file_name,"rb")
+    todo_dictionary = pickle.load(file)
+    file.close()
+    print(todo_dictionary)
+else:
+    file = open(file_name,"wb")
+    file.close()
 
 root = tk.Tk()
 
-root.geometry("500x500")
+root.geometry("600x500")
 
 root.title("Calandar")
 
@@ -78,18 +107,19 @@ for day in days:
 # 14, 15, 16, 17, 18, 19, 20,
 # 21, 22, 23, 24, 25, 26, 27,
 # 28, 29, 30, 31, 32, 33, 34
-date_labels = []
+date_buttons = []
 for da in range(36):
-    lb = tk.Label(root,text = "")
-    date_labels.append(lb)
+    lb = tk.Button(root,text = "")
+    date_buttons.append(lb)
 
 def ShowMonth(days_in_month,day_of_week):
-    if len(date_labels) > 0:
-        for da in date_labels:
+    if len(date_buttons) > 0:
+        for da in date_buttons:
             da.configure(text = "")
+            da.grid_forget()
     for days in range(days_in_month[1]):
-        lb = date_labels[day_of_week+days-1]
-        lb.configure(text = str(days+1))
+        lb = date_buttons[day_of_week+days-1]
+        lb.configure(text = str(days+1),command = lambda d = (days+1): ShowDaysToDoItems(d))
         lb.grid(column = (day_of_week+days)%7, row = 3 + (days+day_of_week)//7)
 
 
@@ -99,3 +129,59 @@ current_year = date.year
 days_in_month = calendar.monthrange(current_year,current_month)
 day_of_week = datetime.date(current_year,current_month,1).weekday()
 ShowMonth(days_in_month,day_of_week)
+
+def Hide():
+    global frame
+    global entry
+    global hidebtn
+    global btn
+    for x in frame.winfo_children():
+        x.destroy()
+    entry.delete(0,len(entry.get()))
+    entry.grid_forget()
+    btn.grid_forget()
+    hidebtn.grid_forget()
+    hidebtn.update()
+
+entry = tk.Entry(root)
+btn = tk.Button(root,text = "Register todo item")
+hidebtn = tk.Button(root,text = "Hide todo items",command = Hide)
+frame = tk.Frame(root)
+
+
+
+def ShowDaysToDoItems(day):
+    date = datetime.date(current_year,current_month,day)
+    for td in todo_dictionary[date]:
+        lb = tk.Label(frame,text = td.description)
+        lb.pack()
+    frame.grid(column = 7, row = 3, rowspan = 7)
+    ShowRegisterButtons(day)
+    
+
+def ShowRegisterButtons(day):
+    global entry
+    global btn
+    btn.configure(command = lambda d = day: RegisterNewToDoItem(d))
+    entry.grid(column = 8, row = 3)
+    btn.grid(column = 9, row = 3)
+    hidebtn.grid(column = 9, row = 4)
+
+def RegisterNewToDoItem(day):
+    global entry
+    global btn
+    global hidebtn
+    global frame
+    tdl = ToDoItem(entry.get(),datetime.date(current_year,current_month,day))
+    if tdl.due_date in todo_dictionary:
+        todo_dictionary[tdl.due_date].append(tdl)
+    else:
+        l = [tdl]
+        todo_dictionary[tdl.due_date] = l
+    print("registered")
+    print(todo_dictionary)
+    file = open(file_name,"wb")
+    pickle.dump(todo_dictionary,file)
+    file.close()
+    
+    Hide()
