@@ -157,19 +157,20 @@ def ChangeToDoStatus(d, i):
     
 def ShowDaysToDoItems(day):
     date = datetime.date(current_year,current_month,day)
-    for td in todo_dictionary[date]:
-        cb = tk.Checkbutton(frame, command = lambda d = date, i = todo_dictionary[date].index(td): ChangeToDoStatus(d,i))
-        if td.completed:
-            cb.select()
-            #cb.configure(image = check)
-            #cb.image = check
-        else:
-            cb.deselect()
-            #cb.configure(image = empty)
-            #cb.image = empty
-        cb.grid(column = 0, row = todo_dictionary[date].index(td))
-        lb = tk.Label(frame,text = td.description)
-        lb.grid(column = 1, row = todo_dictionary[date].index(td))
+    if date in todo_dictionary:
+        for td in todo_dictionary[date]:
+            cb = tk.Checkbutton(frame, command = lambda d = date, i = todo_dictionary[date].index(td): ChangeToDoStatus(d,i))
+            if td.completed:
+                cb.select()
+                #cb.configure(image = check)
+                #cb.image = check
+            else:
+                cb.deselect()
+                #cb.configure(image = empty)
+                #cb.image = empty
+            cb.grid(column = 0, row = todo_dictionary[date].index(td))
+            lb = tk.Label(frame,text = td.description)
+            lb.grid(column = 1, row = todo_dictionary[date].index(td))
     frame.grid(column = 7, row = 3, rowspan = 7)
     ShowRegisterButtons(day)
     
@@ -177,6 +178,7 @@ def ShowDaysToDoItems(day):
 def ShowRegisterButtons(day):
     global entry
     global btn
+    global hidebtn
     btn.configure(command = lambda d = day: RegisterNewToDoItem(d))
     entry.grid(column = 8, row = 3)
     btn.grid(column = 9, row = 3)
