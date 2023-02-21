@@ -34,7 +34,7 @@ else:
 
 root = tk.Tk()
 
-root.geometry("600x500")
+root.geometry("700x500")
 
 root.title("Calandar")
 
@@ -148,13 +148,28 @@ btn = tk.Button(root,text = "Register todo item")
 hidebtn = tk.Button(root,text = "Hide todo items",command = Hide)
 frame = tk.Frame(root)
 
+#check = tk.PhotoImage(file = "Check.png",width = 20, height = 20)
+empty = tk.PhotoImage(width = 20, height = 20)
 
-
+def ChangeToDoStatus(d, i):
+    todo_dictionary[d][i].completed = not todo_dictionary[d][i].completed
+    Save()
+    
 def ShowDaysToDoItems(day):
     date = datetime.date(current_year,current_month,day)
     for td in todo_dictionary[date]:
+        cb = tk.Checkbutton(frame, command = lambda d = date, i = todo_dictionary[date].index(td): ChangeToDoStatus(d,i))
+        if td.completed:
+            cb.select()
+            #cb.configure(image = check)
+            #cb.image = check
+        else:
+            cb.deselect()
+            #cb.configure(image = empty)
+            #cb.image = empty
+        cb.grid(column = 0, row = todo_dictionary[date].index(td))
         lb = tk.Label(frame,text = td.description)
-        lb.pack()
+        lb.grid(column = 1, row = todo_dictionary[date].index(td))
     frame.grid(column = 7, row = 3, rowspan = 7)
     ShowRegisterButtons(day)
     
@@ -180,8 +195,12 @@ def RegisterNewToDoItem(day):
         todo_dictionary[tdl.due_date] = l
     print("registered")
     print(todo_dictionary)
+    Save()
+    
+    
+    Hide()
+    
+def Save():
     file = open(file_name,"wb")
     pickle.dump(todo_dictionary,file)
     file.close()
-    
-    Hide()
